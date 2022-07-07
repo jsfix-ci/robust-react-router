@@ -324,6 +324,9 @@ describe("robust-react-router works", () => {
       expect(wrapper.find(".books")).toHaveLength(1);
       expect(wrapper.find(".my-books")).toHaveLength(0);
 
+      /* TODO: JSFIX could not patch the breaking change:
+      Removed relative pathname support in hash history and memory history 
+      Suggested fix: Relative paths are no longer supportet by the hash/memory history, hence we recommend using the entire path name instead. */
       history.push("/jahoda-nema-zdani");
       wrapper = render(
         <RobustRouter router={router}>
@@ -372,6 +375,9 @@ describe("robust-react-router works", () => {
       expect(wrapper.find(".books")).toHaveLength(1);
       expect(wrapper.find(".my-books")).toHaveLength(0);
 
+      /* TODO: JSFIX could not patch the breaking change:
+      Removed relative pathname support in hash history and memory history 
+      Suggested fix: Relative paths are no longer supportet by the hash/memory history, hence we recommend using the entire path name instead. */
       history.push("/books/1/nowhere/to/go?a=b#jindy");
       wrapper = render(
         <RobustRouter router={router}>
